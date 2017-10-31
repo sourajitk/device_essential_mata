@@ -47,6 +47,10 @@ PRODUCT_BOARD_PLATFORM := msm8998
 PRODUCT_PACKAGES += \
     libbase_shim
 
+# Keylayout
+PRODUCT_COPY_FILES += \
+    device/essential/mata/keylayout/uinput-fpc.kl:system/usr/keylayout/uinput-fpc.kl
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     device/essential/mata
