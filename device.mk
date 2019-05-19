@@ -14,10 +14,21 @@
 # limitations under the License.
 #
 
-# Soong namespaces
-PRODUCT_SOONG_NAMESPACES += \
-    device/essential/mata
+# Boot control
+PRODUCT_PACKAGES += \
+    android.hardware.boot@1.0-impl:64 \
+    android.hardware.boot@1.0-impl.recovery:64 \
+    android.hardware.boot@1.0-service \
+    bootctrl.msm8998 \
+    bootctrl.msm8998.recovery
+
+PRODUCT_PACKAGES_DEBUG += \
+    bootctl
 
 # Init
 PRODUCT_PACKAGES += \
     fstab.mata
+
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += \
+    device/essential/mata
