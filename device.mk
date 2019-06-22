@@ -174,6 +174,7 @@ PRODUCT_PACKAGES += \
     init.mata.usb.rc \
     init.qcom.devstart.sh \
     init.qcom.ipastart.sh \
+    init.qcom.post_boot.sh \
     ueventd.mata.rc
 
 # IPACM
@@ -275,11 +276,7 @@ PRODUCT_COPY_FILES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service.pixel-libperfmgr \
-    android.hardware.power.stats@1.0-service.pixel
-
-PRODUCT_COPY_FILES += \
-    device/essential/mata/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
+    power.qcom
 
 # Protobuf
 PRODUCT_PACKAGES += \

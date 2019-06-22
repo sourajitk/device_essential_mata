@@ -100,6 +100,7 @@ BOARD_KERNEL_CMDLINE += lpm_levels.sleep_disabled=1 service_locator.enable=1
 BOARD_KERNEL_CMDLINE += swiotlb=2048 androidboot.configfs=true
 BOARD_KERNEL_CMDLINE += androidboot.usbcontroller=a800000.dwc3
 BOARD_KERNEL_CMDLINE += loop.max_part=7
+BOARD_KERNEL_CMDLINE += sched_enable_hmp=1 sched_enable_power_aware=1
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_TAGS_OFFSET := 0x02000000
@@ -131,6 +132,9 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 TARGET_USES_MKE2FS := true
 
+# Power
+TARGET_USES_INTERACTION_BOOST := true
+
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.mata
 TARGET_RECOVERY_WIPE := $(DEVICE_PATH)/recovery.wipe
@@ -139,9 +143,6 @@ TARGET_RECOVERY_WIPE := $(DEVICE_PATH)/recovery.wipe
 BOARD_ROOT_EXTRA_SYMLINKS := /mnt/vendor/persist:/persist
 BOARD_ROOT_EXTRA_SYMLINKS += /vendor/lib/dsp:/dsp
 BOARD_ROOT_EXTRA_SYMLINKS += /vendor/firmware_mnt:/firmware
-
-# Security Patch Level
-VENDOR_SECURITY_PATCH := 2020-02-05
 
 # SELinux
 include device/qcom/sepolicy-legacy-um/SEPolicy.mk

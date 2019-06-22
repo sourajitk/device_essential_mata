@@ -56,3 +56,9 @@ sh_binary {
     vendor: true,
     src: "bin/init.qcom.ipastart.sh"
 }
+
+sh_binary {
+    name: "init.qcom.post_boot.sh",
+    vendor: true,
+    src: "bin/init.qcom.post_boot.sh"
+}
