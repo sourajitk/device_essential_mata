@@ -51,6 +51,15 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     device/essential/mata/keylayout/uinput-fpc.kl:system/usr/keylayout/uinput-fpc.kl
 
+# Overlays
+PRODUCT_PACKAGES += \
+    EssentialCarrierConfig \
+    EssentialFrameworks \
+    EssentialSettings \
+    EssentialSettingsProvider \
+    EssentialSystemUI \
+    EssentialTelephony
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     device/essential/mata
