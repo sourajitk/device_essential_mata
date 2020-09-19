@@ -23,6 +23,9 @@ ro.sys.fw.dex2oat_thread_count=8
 debug.sf.disable_backpressure=1
 debug.sf.enable_hwc_vds=1
 
+# Use Vulkan backend for Skia UI rendering
+debug.hwui.renderer=skiavk
+
 # Factory reset partition
 ro.frp.pst=/dev/block/platform/soc/1da4000.ufshc/by-name/frp
 
