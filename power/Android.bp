@@ -1,0 +1,32 @@
+cc_binary {
+    name: "android.hardware.power-service.mata",
+
+    relative_install_path: "hw",
+    shared_libs: [
+        "liblog",
+        "libcutils",
+        "libdl",
+        "libxml2",
+        "libbase",
+        "libutils",
+        "android.hardware.power-ndk_platform",
+        "libbinder_ndk",
+    ],
+    header_libs: ["libutils_headers"] + ["libhardware_headers"],
+    srcs: [
+        "power-common.c",
+        "metadata-parser.c",
+        "utils.c",
+        "list.c",
+        "hint-data.c",
+        "powerhintparser.c",
+        "Power.cpp",
+        "main.cpp",
+        "power-8998.c"
+    ] 
+
+    init_rc: ["android.hardware.power-service.mata.rc"],
+
+    vendor: true,
+    vintf_fragments: ["power-mata.xml"],
+}
