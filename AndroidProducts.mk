@@ -15,9 +15,9 @@
 #
 
 PRODUCT_MAKEFILES += \
-    device/essential/mata/statix_mata.mk
+    device/essential/mata/hentai_mata.mk
 
 COMMON_LUNCH_CHOICES := \
-    statix_mata-user \
-    statix_mata-userdebug \
-    statix_mata-eng
+    hentai_mata-user \
+    hentai_mata-userdebug \
+    hentai_mata-eng
