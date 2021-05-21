@@ -60,6 +60,14 @@ PRODUCT_PACKAGES += \
     EssentialSystemUI \
     EssentialTelephony
 
+# Permissions
+PRODUCT_COPY_FILES += \
+    device/essential/mata/permissions/privapp-permissions-mata.xml:system/etc/permissions/privapp-permissions-mata.xml
+
+# Platform
+PRODUCT_USES_QCOM_HARDWARE := true
+PRODUCT_BOARD_PLATFORM := msm8998
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     device/essential/mata
