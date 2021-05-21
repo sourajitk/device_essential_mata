@@ -44,5 +44,23 @@ TARGET_BOARD_PLATFORM_GPU := qcom-adreno540
 
 TARGET_USES_64_BIT_BINDER := true
 
+# Kernel
+BOARD_KERNEL_CMDLINE := androidboot.hardware=mata user_debug=31 ehci-hcd.park=3 \
+                        lpm_levels.sleep_disabled=1 service_locator.enable=1 \
+                        swiotlb=2048 androidboot.configfs=true \
+                        androidboot.usbcontroller=a800000.dwc3 \
+                        loop.max_part=7
+BOARD_KERNEL_BASE := 0x00000000
+BOARD_KERNEL_PAGESIZE := 4096
+BOARD_KERNEL_TAGS_OFFSET := 0x02000000
+BOARD_RAMDISK_OFFSET := 0x02200000
+
+# Kernel build pointers
+BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
+TARGET_KERNEL_SOURCE := kernel/essential/msm8998
+TARGET_KERNEL_CONFIG := mata_defconfig
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-elf-
+KERNEL_TOOLCHAIN := $(PWD)/prebuilts/gcc/linux-x86/aarch64/arm64-gcc/bin
+
 # Properties
 TARGET_SYSTEM_PROP := $(DEVICE_PATH)/system.prop
