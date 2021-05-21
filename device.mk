@@ -14,6 +14,16 @@
 # limitations under the License.
 #
 
+# A/B
+AB_OTA_POSTINSTALL_CONFIG += \
+    RUN_POSTINSTALL_system=true \
+    POSTINSTALL_PATH_system=system/bin/otapreopt_script \
+    FILESYSTEM_TYPE_system=ext4 \
+    POSTINSTALL_OPTIONAL_system=true
+
+PRODUCT_PACKAGES += \
+    otapreopt_script
+
 # Boot control
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.0-impl:64 \
@@ -28,6 +38,10 @@ PRODUCT_PACKAGES_DEBUG += \
 # Init
 PRODUCT_PACKAGES += \
     fstab.mata
+
+# Platform
+PRODUCT_USES_QCOM_HARDWARE := true
+PRODUCT_BOARD_PLATFORM := msm8998
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
