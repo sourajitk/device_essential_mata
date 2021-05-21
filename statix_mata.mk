@@ -1,0 +1,56 @@
+#
+# Copyright (C) 2021 StatiXOS
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+# Inherit some common StatiXOS makefiles.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+$(call inherit-product, vendor/statix/config/common.mk)
+$(call inherit-product, vendor/statix/config/gsm.mk)
+
+# Inherit some basic core makefiles.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_n_mr1.mk)
+
+# Inherit vendor makefile.
+$(call inherit-product, vendor/essential/mata/mata-vendor.mk)
+
+# Enable updateable APEX.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
+
+# Device makefile.
+$(call inherit-product, device/essential/mata/device.mk)
+
+# Recovery fstab.
+TARGET_RECOVERY_FSTAB := device/essential/mata/rootdir/etc/fstab.mata
+
+# Device identifiers
+PRODUCT_DEVICE := mata
+PRODUCT_NAME := statix_mata
+PRODUCT_BRAND := essential
+PRODUCT_MODEL := PH-1
+PRODUCT_MANUFACTURER := Essential Products
+PRODUCT_RELEASE_NAME := mata
+
+PRODUCT_ACTIONABLE_COMPATIBLE_PROPERTY_DISABLE := true
+PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
+
+PRODUCT_CHARACTERISTICS := nosdcard
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+        PRODUCT_NAME=mata \
+        PRIVATE_BUILD_DESC="mata-user 8.1.0 OPM1.180104.092 224 release-keys"
+
+BUILD_FINGERPRINT := essential/mata/mata:8.1.0/OPM1.180104.092/224:user/release-keys
