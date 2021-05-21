@@ -157,6 +157,9 @@ PRODUCT_PACKAGES += \
     libhidltransport.vendor \
     libhwbinder.vendor
 
+# Headers
+PRODUCT_VENDOR_KERNEL_HEADERS := device/essential/mata/kernel-headers
+
 # IMS
 PRODUCT_PACKAGES += \
     libbase_shim
