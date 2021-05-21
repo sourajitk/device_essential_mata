@@ -37,11 +37,8 @@ PRODUCT_PACKAGES_DEBUG += \
 
 # Init
 PRODUCT_PACKAGES += \
-    fstab.mata
-
-# Platform
-PRODUCT_USES_QCOM_HARDWARE := true
-PRODUCT_BOARD_PLATFORM := msm8998
+    fstab.mata \
+	init.mata.rc
 
 # IMS
 PRODUCT_PACKAGES += \

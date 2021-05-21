@@ -15,6 +15,13 @@
 //
 
 prebuilt_etc {
+    name: "init.mata.rc",
+    vendor_overlay: true,
+    sub_dir: "init/hw",
+    src: "etc/init.mata.rc",
+}
+
+prebuilt_etc {
      name: "fstab.mata",
      vendor_overlay: true,
      src: "etc/fstab.mata",
