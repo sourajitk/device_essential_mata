@@ -7,6 +7,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/telephony_system_ext.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/handheld_vendor.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/telephony_vendor.mk)
 
+# StatiXOS
+$(call inherit-product, vendor/statix/config/common.mk)
+$(call inherit-product, vendor/statix/config/gsm.mk)
+
 # Vendor blobs
 $(call inherit-product, vendor/essential/mata/mata-vendor.mk)
 
@@ -15,7 +19,7 @@ $(call inherit-product, device/essential/mata/device.mk)
 
 # Device identifiers
 PRODUCT_DEVICE := mata
-PRODUCT_NAME := mata
+PRODUCT_NAME := statix_mata
 PRODUCT_BRAND := essential
 PRODUCT_MODEL := PH-1
 PRODUCT_MANUFACTURER := Essential Products
