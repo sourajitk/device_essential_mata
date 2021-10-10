@@ -14,6 +14,8 @@
 # limitations under the License.
 #
 
+TARGET_USES_BLUR := true
+
 SELINUX_IGNORE_NEVERALLOWS := true
 
 # Platform
@@ -223,8 +225,7 @@ PRODUCT_COPY_FILES += \
 
 # Network
 PRODUCT_PACKAGES += \
-    android.system.net.netd@1.0 \
-    android.system.net.netd@1.0.vendor \
+    android.system.net.netd@1.1.vendor \
     netutils-wrapper-1.0
 
 # NFC
@@ -315,6 +316,13 @@ PRODUCT_PACKAGES += \
     libjson
 
 # Radio
+PRODUCT_PACKAGES += \
+    android.hardware.radio@1.1 \
+    android.hardware.radio@1.6.vendor \
+    android.hardware.radio.config@1.3.vendor \
+    android.hardware.radio.deprecated@1.0.vendor \
+    android.hardware.secure_element@1.2.vendor
+
 PRODUCT_PACKAGES += \
     librmnetctl
 
