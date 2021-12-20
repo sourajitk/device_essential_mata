@@ -14,8 +14,6 @@
 # limitations under the License.
 #
 
-TARGET_USES_BLUR := true
-
 SELINUX_IGNORE_NEVERALLOWS := true
 
 # Platform
