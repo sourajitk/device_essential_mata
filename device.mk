@@ -114,10 +114,6 @@ PRODUCT_COPY_FILES += \
     system/core/libprocessgroup/profiles/cgroups_28.json:$(TARGET_COPY_OUT_VENDOR)/etc/cgroups.json \
     system/core/libprocessgroup/profiles/task_profiles_28.json:$(TARGET_COPY_OUT_VENDOR)/etc/task_profiles.json
 
-# Device settings
-PRODUCT_PACKAGES += \
-    DeviceSettings
-
 # Display
 PRODUCT_PACKAGES += \
     android.frameworks.displayservice@1.0.vendor \
@@ -203,6 +199,13 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/essential/mata/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
 
+# Kernel
+PRODUCT_COPY_FILES += \
+    device/essential/mata-kernel/kernel:kernel
+
+# Kernel headers
+PRODUCT_VENDOR_KERNEL_HEADERS := hardware/qcom-caf/msm8998/kernel-headers
+
 # Keymaster HAL
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@3.0-impl \
@@ -211,11 +214,6 @@ PRODUCT_PACKAGES += \
 # Led packages
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.mata
-
-# LiveDisplay native
-PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.0-service-sdm \
-    vendor.lineage.livedisplay@2.0-service-sysfs
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -311,6 +309,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     device/essential/mata/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 
+# Platform
+PRODUCT_USES_QCOM_HARDWARE := true
+PRODUCT_BOARD_PLATFORM := msm8998
+
 # Protobuf
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-full-vendorcompat \
@@ -400,10 +402,6 @@ PRODUCT_PACKAGES += \
 # Tracing
 PRODUCT_PACKAGES += \
     android.hardware.atrace@1.0-service.pixel
-
-# Trust HAL
-PRODUCT_PACKAGES += \
-    vendor.lineage.trust@1.0-service
 
 # Update engine
 PRODUCT_PACKAGES += \
